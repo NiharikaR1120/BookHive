@@ -1,0 +1,17 @@
+
+#main-body{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+#font{
+    font-weight: bolder;
+    font-family: 'Papyrus';
+    font-size: larger;
+}
+#welcome-message{
+    font-size: 100px;
+    color: azure;
+    text-align: center;
+    font-family: 'Brush Script MT';
+    margin-top: 300px;
+}
