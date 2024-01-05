@@ -10,7 +10,9 @@ function findBook(){
         url: "https://www.googleapis.com/books/v1/volumes?q=" + userSearch,
         dataType: "JSON",
         success: function(book){
+            // console.log('here....')
             console.log(book);
+            // console.log("succesful");
             for(var i = 0; book.items.length; i++){
                 var wrapperDiv = document.createElement('div');
                 wrapperDiv.className = 'media';
@@ -20,7 +22,7 @@ function findBook(){
                 image.src = book.items[i].volumeInfo.imageLinks.thumbnail;
                 // create div element with class of media-body
                 var div = document.createElement('div');
-                div.className = 'media-body text-light';
+                div.className = 'media-body';
                 // create header for body
                 var header = document.createElement('h2');
                 header.className = 'mt-0';
@@ -63,6 +65,7 @@ function findBook(){
                 // Make every elements as children element of bookResult
                 bookResult.appendChild(wrapperDiv);
                 bookResult.appendChild(line);
+
                 
             }
         }
