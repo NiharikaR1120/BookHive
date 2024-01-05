@@ -24,17 +24,30 @@ app.use(express.static('public', { maxAge: 0 }));
 // });
 
 const port = process.env.PORT || 3000;
+
+// app.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+//     console.log('Application started successfully!');
+// });
+
+
 app.get('/', (req, res, next) => {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate'); // Disable caching
-});
-
-
-app.get('/', (req, res) => {
     res.render('home.handlebars');
 });
 
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-    console.log('Application started successfully!');
+// app.get('/', (req, res) => {
+    
+// });
+
+
+
+
+
+process.on('SIGINT', () => {
+    server.close(() => {
+        console.log('Server closed.');
+        process.exit(0);
+    });
 });
